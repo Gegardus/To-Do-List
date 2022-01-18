@@ -4,7 +4,7 @@
 
 To Do list: list structure
 
-> This is a simple HTML list of To Do tasks. 
+> This is a simple HTML list of To Do tasks.
 
 ![screenshot](./app_screenshot.png)
 
@@ -16,11 +16,11 @@ To Do list: list structure
 
 ## Live Demo
 
-[Live Demo Link](https://gegardus.github.io/Awesome-Books/)
+[Live Demo Link](https://gegardus.github.io/To-Do-List/)
 
 ## Getting Started
 
-https://gegardus.github.io/Mobile-Version/
+https://github.com/Gegardus/To-Do-List/tree/structure
 
 ## Author
 
