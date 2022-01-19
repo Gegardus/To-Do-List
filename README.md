@@ -1,12 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Title
 
-To Do list: list structure
+To Do list: add & remove
 
 > This is a simple HTML list of To Do tasks.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./app_screenshot1.png)
+![screenshot](./app_screenshot2.png)
+![screenshot](./app_screenshot3.png)
 
 ## Built With
 
@@ -20,13 +22,34 @@ To Do list: list structure
 
 ## Getting Started
 
-https://github.com/Gegardus/To-Do-List/tree/structure
+To get a local copy up and running follow these simple example steps:
+
+### Prerequisites
+
+clone repo: `https://github.com/Gegardus/To-Do-List/tree/addrmv`
+
+then
+`cd Awesome-Books`
+
+### Install
+
+run `npm install` to install dependencies
+
+## Contribute
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Gegardus/To-Do-List/issues)
 
 ## Author
 
-Vahan Khachvankian
+👤 **Vahan Khachvankian**
 
 - GitHub: https://github.com/Gegardus
+
+## Acknowledgements
+
+I highly appreciate the help in the project from the all my partners and mentor.
 
 ## 📝 License
 
