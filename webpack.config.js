@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+// eslint-disable-next-line import/no-unresolved
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// eslint-disable-next-line import/no-unresolved
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -42,7 +43,7 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'assets/[name][hash][ext]',
-        },      
+        },
         // use: 'raw-loader',
       },
       {

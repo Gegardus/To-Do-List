@@ -29,7 +29,7 @@ To get a local copy up and running follow these simple example steps:
 clone repo: `https://github.com/Gegardus/To-Do-List/tree/addrmv`
 
 then
-`cd Awesome-Books`
+`cd To Do List`
 
 ### Install
 
