@@ -1,7 +1,12 @@
- html { 
-  background-color: #add8e6;
-  box-sizing: border-box;
-} 
+:root {
+  --font-color: darkgray
+  --font-size: 1.3em; 
+}
+
+html {
+  box-sizing: border-box;  
+  border: lightsteelblue;
+}
 
 *,
 *::after,
@@ -9,6 +14,16 @@
   box-sizing: inherit;
   padding: 0;
   margin: 0;
+}
+
+@font-face {
+  font-family: "MyWebFont";
+  src: url("GemunuLibre-VariableFont_wght.ttf") format("woff2");
+}
+
+body {
+  font-family: "MyWebFont", Fallback, sans-serif;
+
 }
 
 img {
@@ -21,18 +36,19 @@ hr {
   margin-bottom: 20px;
 }
 
-body { 
-  font-family: 'Roboto Condensed', sans-serif;
+body {
+  background-color: gainsboro;
   font-size: 16px;
 }
 
 main {
-  background-color: lawngreen;
+  background-color: #fff;
   width: 90%;
   max-width: 898px;
-  margin: 20% auto;
+  margin: 60px auto;
   padding: 20px 0;
   padding-bottom: 0;
+  overflow-x: hidden;
 }
 
 main li {
@@ -50,19 +66,20 @@ main li {
 
 .reload {
   margin-right: 6px;
-  /* opacity: 0.45; */
+  opacity: 0.45;
 }
 
 .reload:hover {
   cursor: pointer;
-}
+} 
 
 .todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: 0 auto; 
+  width: 96%;
+  margin: 0 auto;
+  color: var(--font-color);
 }
 
 .todo img {
@@ -73,6 +90,7 @@ main li {
 .add {
   border: none;
   padding: 20px 0 30px 0;
+  font-size: var(--font-size);
   font-style: italic;
 }
 
@@ -95,27 +113,55 @@ form {
 .list {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin-top: 15px;
+  border-bottom: 2px solid var(--bottom-rule);
 }
 
 .list li {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 95%;
+  padding: 10px 0;
   margin: 0 auto;
+  z-index: 4;
+}
+
+.list li::before {
+  content: '';
+  width: calc(120% + 40px);
+  height: 2px;
+  background-color: #f5f5dc;
+  position: absolute;
+  top: 0;
+  left: -10%;
+}
+
+.color::after {
+  content: '';
+  width: 140%;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  bottom: 0;
+  background-color: burlywood;
+  z-index: 1;
 }
 
 .check {
+  position: relative;
   display: flex;
   gap: 15px;
   align-items: center;
+  margin-top: 10px;
+  z-index: 10;
+  width: 100%;
 }
 
 .check p {
   font-size: 1.1em;
   opacity: 0.8;
+  width: 90%;
 }
 
 .dots {
@@ -125,31 +171,66 @@ form {
   width: 40px;
   height: 40px;
   opacity: 0.3;
+  margin-top: 12px;
   margin-right: -7px;
+  z-index: 10;
 }
 
-.dots:hover {
+.trash {
+  background-image: url('./assets/trash.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  opacity: 0.3;
+  margin-top: 12px;
+  margin-right: -7px;
+  z-index: 10;
+}
+
+.dots:hover,
+.trash:hover {
   cursor: move;
   opacity: 1;
 }
 
-.footer { 
-  background-color: #90ee90;
-  height: 80px;  
+.trash:hover {
+  cursor: pointer;
 }
 
-.footer h3 {
-  font-size: 1.3em;
-  letter-spacing: 1.5px;
-  opacity: 0.8;
-  padding-top: 30px;
+.footer {
+  background-color: rgb(245, 245, 245);
+  height: 80px;
+  color: var(--font-color);
   text-align: center;
 }
 
-.footer h3:hover {
+.footer .h3 {
+  font-size: 1.3em;
+  letter-spacing: 1.5px;
+  opacity: 0.8;
+  padding: 20px 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.clearMarked:hover {
   cursor: pointer;
   text-decoration: underline;
   color: #000;
   opacity: 1;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
+.tagP {
+  width: 180px;
+  outline: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
