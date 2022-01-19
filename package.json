@@ -30,6 +30,7 @@
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "material-icons": "^1.10.6"
   }
 }

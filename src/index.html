@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
+    <title>Document</title>
   </head>
   <body>
     <main>
@@ -12,20 +12,32 @@
         <div class="header">
           <div class="todo">
             <h1>Today's To Do</h1>
-            <div class="image"></div>
+            <div class="image">
+              <img src="./assets/reload.svg" alt="Reload Icon" class="reload" />
+            </div>
           </div>
         </div>
         <hr />
         <form action="#">
-          <input type="text" placeholder="Add to your list..." class="add" />
-          <div class="enter"></div>
+          <input
+            type="text"
+            placeholder="Add to your list..."
+            class="add"
+          />
+          <div class="enter">
+            <img src="./assets/return.svg" alt="return icon" class="return" />
+          </div>
         </form>
-        <hr />
-        <ul class="list"></ul>
+
+        <div class="container">
+          <ul class="list">
+            <!-- Dynamicaly Generated -->
+          </ul>
+        </div>
       </header>
 
       <div class="footer">
-        <h3>Clear all completed</h3>
+        <button class="clearMarked h3">Clear all completed</button>
       </div>
     </main>
   </body>
