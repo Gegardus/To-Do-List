@@ -47,7 +47,7 @@ export default class TodoList {
       });
       p.classList.remove('strike');
     }
-  
+
     const hold = this.list.filter((item) => item);
     this.list = hold;
     localStorage.setItem('todoList', JSON.stringify(this.list));
