@@ -1,10 +1,10 @@
 :root {
-  --font-color: black;
-  --font-size: 1.3em;
+  --font-color: darkgray
+  --font-size: 1.3em; 
 }
 
 html {
-  box-sizing: border-box;
+  box-sizing: border-box;  
   border: lightsteelblue;
 }
 
@@ -23,8 +23,7 @@ html {
 
 body {
   font-family: "MyWebFont", Fallback, sans-serif;
-  background-color: gainsboro;
-  font-size: 16px;
+
 }
 
 img {
@@ -35,6 +34,11 @@ hr {
   height: 2px;
   width: 100%;
   margin-bottom: 20px;
+}
+
+body {
+  background-color: gainsboro;
+  font-size: 16px;
 }
 
 main {
@@ -67,7 +71,7 @@ main li {
 
 .reload:hover {
   cursor: pointer;
-}
+} 
 
 .todo {
   display: flex;
@@ -124,7 +128,7 @@ form {
 }
 
 .list li::before {
-  content: "";
+  content: '';
   width: calc(120% + 40px);
   height: 2px;
   background-color: #f5f5dc;
@@ -134,7 +138,7 @@ form {
 }
 
 .color::after {
-  content: "";
+  content: '';
   width: 140%;
   position: absolute;
   top: 0;
@@ -161,7 +165,7 @@ form {
 }
 
 .dots {
-  background-image: url("./assets/moreDots.svg");
+  background-image: url('./assets/moreDots.svg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 40px;
@@ -173,7 +177,7 @@ form {
 }
 
 .trash {
-  background-image: url("./assets/trash.svg");
+  background-image: url('./assets/trash.svg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 35px;

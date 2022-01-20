@@ -1,7 +1,6 @@
 const todoListContianer = document.querySelector('.list');
 const listConatiner = document.querySelector('.container');
 const singleList = document.createElement('li');
-export const clearComoleted = document.querySelector('.clearMarked');
 
 export function render(member, TodoListObj) {
   todoListContianer.innerHTML = '';
@@ -49,7 +48,7 @@ export function editDescription(dotValue, index, TodoListObj) {
   const divTrash = document.createElement('div');
   divTrash.classList.add('trash');
   const divDot = document.createElement('div');
-  divDot.classList.add('three__dots');
+  divDot.classList.add('dots');
 
   if (document.querySelector('.color')) {
     document.querySelector('.color').appendChild(divDot);
@@ -59,7 +58,7 @@ export function editDescription(dotValue, index, TodoListObj) {
 
   parentImage.appendChild(divTrash);
   parentImage.classList.add('color');
-  imageTrash[index].querySelector('.three__dots').remove();
+  imageTrash[index].querySelector('.dots').remove();
   divTrash.addEventListener('click', () => {
     const content = parentImage.querySelector('.tagP');
     content.classList.add('strike');

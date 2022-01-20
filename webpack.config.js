@@ -16,6 +16,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Output management',
       template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
@@ -43,7 +44,7 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'assets/[name][hash][ext]',
-        },
+        },      
         // use: 'raw-loader',
       },
       {

@@ -38,6 +38,8 @@ export default class TodoList {
     localStorage.setItem('todoList', JSON.stringify(this.list));
   }
 
+  // SMALL UTILITIES Needed
+
   editListWrite(pDots, index, e) {
     if (e.key === 'Enter') {
       pDots.contentEditable = false;

@@ -1,7 +1,7 @@
 import './style.css';
 // eslint-disable-next-line import/no-cycle
 import TodoList, { inputTodo } from './module/updateStatus.js';
-import { editDescription, clearComoleted, render } from './module/addRemove.js';
+import { editDescription, render } from './module/addRemove.js';
 
 const TodoListObj = new TodoList();
 
@@ -26,12 +26,6 @@ inputTodo.addEventListener('keypress', (e) => {
     render(TodoListObj.list, TodoListObj);
     Starter();
   }
-});
-
-clearComoleted.addEventListener('click', () => {
-  TodoListObj.removeList();
-  render(TodoListObj.list, TodoListObj);
-  Starter();
 });
 
 render(TodoListObj.list, TodoListObj);
