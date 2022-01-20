@@ -1,23 +1,32 @@
-// import _ from 'lodash';
 import './style.css';
+// eslint-disable-next-line import/no-cycle
+import TodoList, { inputTodo } from './module/updateStatus.js';
+import { editDescription, render } from './module/addRemove.js';
 
-const todoListContianer = document.querySelector('.list');
+const TodoListObj = new TodoList();
 
-const todoList = [
-  { description: 'Wake up on time', completed: false, index: 0 },
-  { description: 'Complete all the quests of the curriculum', completed: false, index: 1 },
-  { description: 'Go to bed early to rest', completed: false, index: 2 },
+export default function Starter() {
+  const threeDots = document.querySelectorAll('li');
+  threeDots.forEach((dotValue, index) => {
+    const dot = dotValue.querySelector('.dots');
+    if (dot) {
+      const newDot = dot.cloneNode(true);
+      dotValue.replaceChild(newDot, dot);
+      newDot.addEventListener('click', () => {
+        editDescription(dotValue, index, TodoListObj);
+        Starter();
+      });
+    }
+  });
+}
 
-];
-
-todoList.forEach((list) => {
-  todoListContianer.innerHTML += `<li>
-  <div class="check">
-    <input type="checkbox" name="completed" />
-    <p>${list.description}</p>
-  </div>
-  <div class="dots">
-  </div>
-</li>
-<hr /> `;
+inputTodo.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    TodoListObj.addTodo();
+    render(TodoListObj.list, TodoListObj);
+    Starter();
+  }
 });
+
+render(TodoListObj.list, TodoListObj);
+Starter();
