@@ -44,7 +44,7 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'assets/[name][hash][ext]',
-        },      
+        },
         // use: 'raw-loader',
       },
       {

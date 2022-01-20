@@ -1,10 +1,9 @@
 :root {
-  --font-color: darkgray
-  --font-size: 1.3em; 
+  --font-size: 1.3em;
 }
 
 html {
-  box-sizing: border-box;  
+  box-sizing: border-box;
   border: lightsteelblue;
 }
 
@@ -23,7 +22,6 @@ html {
 
 body {
   font-family: "MyWebFont", Fallback, sans-serif;
-
 }
 
 img {
@@ -71,7 +69,7 @@ main li {
 
 .reload:hover {
   cursor: pointer;
-} 
+}
 
 .todo {
   display: flex;
@@ -79,7 +77,6 @@ main li {
   align-items: center;
   width: 96%;
   margin: 0 auto;
-  color: var(--font-color);
 }
 
 .todo img {
@@ -113,7 +110,6 @@ form {
 .list {
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid var(--bottom-rule);
 }
 
 .list li {
@@ -128,7 +124,7 @@ form {
 }
 
 .list li::before {
-  content: '';
+  content: "";
   width: calc(120% + 40px);
   height: 2px;
   background-color: #f5f5dc;
@@ -138,7 +134,7 @@ form {
 }
 
 .color::after {
-  content: '';
+  content: "";
   width: 140%;
   position: absolute;
   top: 0;
@@ -165,7 +161,7 @@ form {
 }
 
 .dots {
-  background-image: url('./assets/moreDots.svg');
+  background-image: url("./assets/moreDots.svg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 40px;
@@ -177,7 +173,7 @@ form {
 }
 
 .trash {
-  background-image: url('./assets/trash.svg');
+  background-image: url("./assets/trash.svg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 35px;
@@ -201,7 +197,6 @@ form {
 .footer {
   background-color: rgb(245, 245, 245);
   height: 80px;
-  color: var(--font-color);
   text-align: center;
 }
 

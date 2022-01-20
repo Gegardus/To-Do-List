@@ -16,10 +16,6 @@ To Do list: add & remove
 - CSS
 - JavaScript
 
-## Live Demo
-
-[Live Demo Link](https://gegardus.github.io/To-Do-List/)
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
