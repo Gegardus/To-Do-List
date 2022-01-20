@@ -2,7 +2,7 @@
 
 # Title
 
-To Do list: add & remove
+To Do list: interactive list
 
 > This is a simple HTML list of To Do tasks.
 
@@ -22,7 +22,7 @@ To get a local copy up and running follow these simple example steps:
 
 ### Prerequisites
 
-clone repo: `https://github.com/Gegardus/To-Do-List/tree/addrmv`
+clone repo: `https://github.com/Gegardus/To-Do-List/tree/interact`
 
 then
 `cd To Do List`
