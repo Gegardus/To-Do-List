@@ -1,7 +1,7 @@
 import './style.css';
 // eslint-disable-next-line import/no-cycle
 import TodoList, { inputTodo } from './module/updateStatus.js';
-import { editDescription, render } from './module/addRemove.js';
+import { editDescription, clearCompleted, render } from './module/addRemove.js';
 
 const TodoListObj = new TodoList();
 
@@ -26,6 +26,19 @@ inputTodo.addEventListener('keypress', (e) => {
     render(TodoListObj.list, TodoListObj);
     Starter();
   }
+});
+
+clearCompleted.addEventListener('click', () => {
+  const strickers = document.querySelectorAll('.strike');
+  strickers.forEach((value) => {
+    const parentContainerLi = value.parentNode.parentNode;
+    parentContainerLi.style.display = 'none';
+    const title = parentContainerLi.querySelector('.tagP').textContent;
+    TodoListObj.removeList(title);
+  });
+
+  render(TodoListObj.list, TodoListObj);
+  Starter();
 });
 
 render(TodoListObj.list, TodoListObj);

@@ -1,6 +1,7 @@
 const todoListContianer = document.querySelector('.list');
 const listConatiner = document.querySelector('.container');
 const singleList = document.createElement('li');
+export const clearCompleted = document.querySelector('.clearMarked');
 
 export function render(member, TodoListObj) {
   todoListContianer.innerHTML = '';
