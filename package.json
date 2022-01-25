@@ -4,11 +4,11 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",
-    "publish": "gh-pages -d dist" 
+    "publish": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,15 @@
   "bugs": {
     "url": "https://github.com/Gegardus/To-Do-List/issues"
   },
-  "homepage": "https://github.com/Gegardus/To-Do-List",
+  "homepage": "https://gegardus.github.io/To-Do-List/",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^4.5.2",
+    "jest": "^27.4.7",
     "mini-css-extract-plugin": "^2.5.2",
     "raw-loader": "^4.0.2",
     "style-loader": "^3.3.1",
