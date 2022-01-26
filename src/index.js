@@ -20,14 +20,6 @@ export default function Starter() {
   });
 }
 
-inputTodo.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    TodoListObj.addTodo();
-    render(TodoListObj.list, TodoListObj);
-    Starter();
-  }
-});
-
 clearCompleted.addEventListener('click', () => {
   const strickers = document.querySelectorAll('.strike');
   strickers.forEach((value) => {

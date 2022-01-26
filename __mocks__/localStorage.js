@@ -14,7 +14,7 @@ export default class LocalStorage {
   removeItem(key) {
     delete this.store[key];
   }
-  
+
   reset() {
     this.store = {};
   }
