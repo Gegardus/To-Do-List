@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-cycle
 import Starter from './starter.js';
 
-const todoListContianer = document.querySelector('.todo__list');
-const listConatiner = document.querySelector('.list__container');
+const todoListContianer = document.querySelector('.list');
+const listConatiner = document.querySelector('.container');
 const singleList = document.createElement('li');
-export const clearComoleted = document.querySelector('.clearMarked');
+export const clearCompleted = document.querySelector('.clearMarked');
 
 export function render(member, TodoListObj) {
   todoListContianer.innerHTML = '';
@@ -62,7 +62,7 @@ export function editDescription(dotValue, index, TodoListObj) {
   const divTrash = document.createElement('div');
   divTrash.classList.add('trash');
   const divDot = document.createElement('div');
-  divDot.classList.add('three__dots');
+  divDot.classList.add('dots');
 
   if (document.querySelector('.color')) {
     document.querySelector('.color').appendChild(divDot);

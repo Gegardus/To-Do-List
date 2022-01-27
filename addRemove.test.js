@@ -73,9 +73,9 @@ describe('Editable Dom', () => {
     const index = 0;
     const textInsterted = 'Task';
 
-   editListWrite(textInsterted, index, todolist);
-   const { description } = todolist.list[0];
-   expect(description).toBe('Task');
+    editListWrite(textInsterted, index, todolist);
+    const { description } = todolist.list[0];
+    expect(description).toBe('Task');
   });
 });
 
@@ -94,9 +94,9 @@ describe('Completed Status Update', () => {
     const title = todolist.list[index].description;
     const marked = true;
 
-   todolist.markList(title, marked);
-   const status = todolist.list[index].completed;
-   expect(status).toBe(true);
+    todolist.markList(title, marked);
+    const status = todolist.list[index].completed;
+    expect(status).toBe(true);
   });
 });
 
@@ -137,4 +137,3 @@ describe('Clear All Completed', () => {
     expect(length).toBe(2);
   });
 });
- 
