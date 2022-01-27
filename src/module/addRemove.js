@@ -1,7 +1,10 @@
-const todoListContianer = document.querySelector('.list');
-const listConatiner = document.querySelector('.container');
+// eslint-disable-next-line import/no-cycle
+import Starter from './starter.js';
+
+const todoListContianer = document.querySelector('.todo__list');
+const listConatiner = document.querySelector('.list__container');
 const singleList = document.createElement('li');
-export const clearCompleted = document.querySelector('.clearMarked');
+export const clearComoleted = document.querySelector('.clearMarked');
 
 export function render(member, TodoListObj) {
   todoListContianer.innerHTML = '';
@@ -12,7 +15,7 @@ export function render(member, TodoListObj) {
       <input type="checkbox" name="completed" value="${list.index}" ${check}  class="chBox"/>
       <p class="tagP">${list.description}</p>
     </div>
-    <div class="dots">
+    <div class="three__dots">
     </div>`;
     todoListContianer.appendChild(singleList.cloneNode(true));
     if (check === 'checked') {
@@ -29,17 +32,27 @@ export function render(member, TodoListObj) {
   // EventListner for CheckBox
   const checkBox = document.querySelectorAll('.chBox');
   let marked = false;
-  checkBox.forEach((content, index) => {
+  checkBox.forEach((content) => {
+    const p = content.parentNode.querySelector('.tagP');
+    const title = p.innerText;
     content.addEventListener('change', () => {
       if (content.checked) {
+        p.classList.add('strike');
         marked = true;
-        TodoListObj.markList(content, index, marked);
+        TodoListObj.markList(title, marked);
       } else {
+        p.classList.remove('strike');
         marked = false;
-        TodoListObj.markList(content, index, marked);
+        TodoListObj.markList(title, marked);
       }
     });
   });
+}
+
+export function editListWrite(textInserted, index, TodoListObj) {
+  TodoListObj.list[index].description = textInserted;
+  localStorage.setItem('todoList', JSON.stringify(TodoListObj.list));
+  Starter();
 }
 
 export function editDescription(dotValue, index, TodoListObj) {
@@ -49,7 +62,7 @@ export function editDescription(dotValue, index, TodoListObj) {
   const divTrash = document.createElement('div');
   divTrash.classList.add('trash');
   const divDot = document.createElement('div');
-  divDot.classList.add('dots');
+  divDot.classList.add('three__dots');
 
   if (document.querySelector('.color')) {
     document.querySelector('.color').appendChild(divDot);
@@ -69,6 +82,16 @@ export function editDescription(dotValue, index, TodoListObj) {
   const pDots = divTrash.parentNode.querySelector('.tagP');
   pDots.contentEditable = true;
   pDots.addEventListener('keyup', (e) => {
-    TodoListObj.editListWrite(pDots, index, e);
+    if (e.key === 'Enter') {
+      pDots.contentEditable = false;
+      document.querySelector('.color .trash').remove();
+      const divDot = document.createElement('div');
+      divDot.classList.add('three__dots');
+      document.querySelector('.color').appendChild(divDot);
+      document.querySelector('.color').classList.remove('color');
+      pDots.innerText = pDots.innerText.replace(/\r?\n|\r/g, '');
+      const text = pDots.innerHTML;
+      editListWrite(text, index, TodoListObj);
+    }
   });
 }

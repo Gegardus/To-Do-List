@@ -1,6 +1,6 @@
 import './style.css';
 // eslint-disable-next-line import/no-cycle
-import TodoList from './module/updateStatus.js';
+import TodoList, { inputTodo } from './module/updateStatus.js';
 import { editDescription, clearCompleted, render } from './module/addRemove.js';
 
 const TodoListObj = new TodoList();
@@ -19,6 +19,14 @@ export default function Starter() {
     }
   });
 }
+
+inputTodo.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    TodoListObj.addTodo();
+    render(TodoListObj.list, TodoListObj);
+    Starter();
+  }
+});
 
 clearCompleted.addEventListener('click', () => {
   const strickers = document.querySelectorAll('.strike');

@@ -19,29 +19,25 @@ export default class TodoList {
     localStorage.setItem('todoList', JSON.stringify(this.list));
   }
 
-  markList(content, index, marked) {
-    const p = content.parentNode.querySelector('.tagP');
-    const title = p.textContent;
+  markList(content, marked) {
     if (marked === true) {
       this.list = this.list.filter((item) => {
-        if (item.description === title) {
+        if (item.description === content) {
           item.completed = true;
           return item;
         }
         return item;
       });
-      p.classList.add('strike');
     } else {
       this.list = this.list.filter((item) => {
-        if (item.description === title) {
+        if (item.description === content) {
           item.completed = false;
           return item;
         }
         return item;
       });
-      p.classList.remove('strike');
     }
-
+    
     const hold = this.list.filter((item) => item);
     this.list = hold;
     localStorage.setItem('todoList', JSON.stringify(this.list));
@@ -53,7 +49,7 @@ export default class TodoList {
     localStorage.setItem('todoList', JSON.stringify(this.list));
   }
 
-  // Utilities
+  // UTILITIES
 
   reArrange() {
     this.list.forEach((value, index) => {
