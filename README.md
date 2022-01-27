@@ -47,6 +47,12 @@ Feel free to check the [issues page](https://github.com/Gegardus/To-Do-List/issu
 
 - GitHub: https://github.com/Gegardus
 
+## Contributor
+
+👤 **Islam Bahnas**
+
+- GitHub: [@githubhandle](https://github.com/Banstein)
+
 ## Acknowledgements
 
 I highly appreciate the help in the project from the all my partners and mentor.
