@@ -1,7 +1,8 @@
 import './style.css';
 // eslint-disable-next-line import/no-cycle
+import Starter from './module/starter.js';
 import TodoList from './module/updateStatus.js';
-import { editDescription, clearCompleted, render } from './module/addRemove.js';
+import { clearCompleted, render } from './module/addRemove.js';
 
 const TodoListObj = new TodoList();
 
