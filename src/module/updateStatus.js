@@ -37,7 +37,7 @@ export default class TodoList {
         return item;
       });
     }
-    
+
     const hold = this.list.filter((item) => item);
     this.list = hold;
     localStorage.setItem('todoList', JSON.stringify(this.list));
